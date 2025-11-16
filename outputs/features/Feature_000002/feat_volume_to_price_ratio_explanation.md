@@ -1,0 +1,6 @@
+# Volume to Price Ratio Explanation
+- **Purpose:** The Volume to Price Ratio measures the relationship between the average traded volume and the average price of a security over a specified time period.
+- **How it works:** This feature calculates the average traded volume and the average price over a rolling window of time, then divides the average volume by the average price to get the ratio.
+- **Inputs & Parameters:** The required inputs are a DataFrame containing historical price and volume data, and parameters include the window size (default 30 days), the name of the column containing closing prices (default 'close'), and the name of the column containing traded volumes (default 'volume').
+- **Use case:** A trader might use this feature to identify periods of high or low trading activity relative to price movements, which can help inform buying or selling decisions.
+- **Interpretation:** A high Volume to Price Ratio indicates that a security is being heavily traded relative to its price, which may suggest strong market interest or a potential trend reversal, while a low ratio suggests relatively low trading activity, which may indicate a lack of market interest or a stable price trend.

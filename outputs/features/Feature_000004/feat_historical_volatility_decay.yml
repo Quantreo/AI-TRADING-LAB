@@ -1,0 +1,42 @@
+idea: historical_volatility_decay
+family: volatility_anomalies
+dependencies:
+- pandas
+- numpy
+description: 'This feature measures the decay of historical volatility over time.
+  It can be useful to identify instances where volatility has been persistently low
+  or high compared to its historical average.
+
+  '
+inputs:
+- close_col
+parameters:
+  window: 20
+  decay_rate: 0.95
+output:
+  name: vol_decay_ratio
+  type: pd.Series
+  description: Ratio of current historical volatility to its value at the beginning
+    of the window
+mathematical_formula: 'vol_decay_ratio = (1 - decay_rate) * (vol_t - vol_1) / (vol_0
+  - vol_1)
+
+  '
+implementation_hint: '1. Compute daily returns using close_col
+
+  2. Calculate the cumulative sum of squared returns
+
+  3. Calculate the average of the cumulative sum of squared returns for the last ''window''
+  days
+
+  4. Repeat steps 2-3 for the first ''window'' days
+
+  5. Compute historical volatility (vol_t) as the square root of the average of the
+  cumulative sum of squared returns
+
+  6. Repeat steps 4-5 for the first ''window'' days to compute historical volatility
+  at the beginning of the window (vol_0) and one day ago (vol_1)
+
+  7. Compute vol_decay_ratio as specified in the mathematical formula'
+created_at: '2025-11-16 15:58:41'
+focus: volatility anomalies

@@ -1,0 +1,6 @@
+# Volume Imbalance Average Explanation
+- **Purpose:** The volume imbalance average measures the average difference between buying and selling pressure over a specified time period.
+- **How it works:** It calculates the daily change in price, then determines if the change was positive or negative, and multiplies the corresponding day's volume by this sign, effectively labeling the volume as "buy" or "sell" volume. It then averages these labeled volumes over a rolling window.
+- **Inputs & Parameters:** The function requires a pandas DataFrame `df` containing price and volume data, as well as optional parameters `window_size` (default 20), `close_col` (default 'close'), and `volume_col` (default 'volume') to specify the window size and column names for closing prices and volumes.
+- **Use case:** A trader might use this feature to identify periods of increasing buying or selling pressure, potentially indicating trend reversals or continuations, and to gauge the strength of market movements.
+- **Interpretation:** High positive values indicate strong buying pressure, while high negative values indicate strong selling pressure. A value close to zero suggests balanced buying and selling activity, with little overall pressure in either direction.

@@ -1,0 +1,6 @@
+### Historical Volatility Decay Explanation
+- **Purpose:** The historical volatility decay feature measures the rate at which the volatility of an asset's price changes over a specified time window.
+- **How it works:** This feature calculates the daily returns of an asset, then computes the average of the squared returns over a given window, which represents the historical volatility. It then compares the current volatility to the volatility at the start of the window, applying a decay rate to determine how quickly volatility is changing.
+- **Inputs & Parameters:** The required inputs include a pandas DataFrame (`df`), a window size (`window`), a decay rate (`decay_rate`), and the name of the column containing closing prices (`close_col`).
+- **Use case:** A trader might use this feature to identify periods where volatility is increasing or decreasing, helping them adjust their trading strategies to manage risk or capitalize on opportunities.
+- **Interpretation:** High values of the historical volatility decay ratio indicate that volatility is increasing rapidly, while low values suggest that volatility is decreasing or stable. A value close to zero means that the current volatility is similar to the volatility at the beginning of the window, implying little change in volatility over time.

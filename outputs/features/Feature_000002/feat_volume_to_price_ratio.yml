@@ -1,0 +1,29 @@
+idea: volume_to_price_ratio
+family: microstructure
+dependencies:
+- pandas
+description: 'This feature measures the ratio of the average traded volume to the
+  average price of a stock, providing insight into market liquidity and order book
+  dynamics.
+
+  '
+inputs:
+- close
+- volume
+parameters:
+  time_window: 30
+output:
+  name: volume_to_price_ratio
+  type: pd.Series
+  description: The ratio of average traded volume to average price over the specified
+    time window
+mathematical_formula: '(V_avg / P_avg)
+
+  '
+implementation_hint: '1. Compute average traded volume = sum(volume) / n
+
+  2. Compute average price = sum(close) / n
+
+  3. Compute the ratio = average_traded_volume / average_price'
+created_at: '2025-11-16 15:58:15'
+focus: the trading features category of your choice

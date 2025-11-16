@@ -1,0 +1,32 @@
+idea: exponential_moving_average_ratio
+family: trend
+dependencies:
+- pandas
+description: 'This feature measures the ratio of short-term and long-term exponential
+  moving averages. It can help identify the trend direction and potential reversals.
+
+  '
+inputs:
+- close
+parameters:
+  short_window: 20
+  long_window: 50
+output:
+  name: ema_ratio
+  type: pd.Series
+  description: Ratio of short-term EMA to long-term EMA
+mathematical_formula: 'ema_short = EMA(close, short_window) ema_long = EMA(close,
+  long_window) ema_ratio = ema_short / ema_long
+
+  '
+implementation_hint: '1. Compute short-term exponential moving average (EMA) of the
+  close price using the short_window parameter
+
+  2. Compute long-term exponential moving average (EMA) of the close price using the
+  long_window parameter
+
+  3. Calculate the ratio of short-term EMA to long-term EMA
+
+  4. Return the EMA ratio as a time series'
+created_at: '2025-11-16 15:56:42'
+focus: trend indicator
