@@ -1,0 +1,32 @@
+target: future_hurst_100
+
+relations:
+  correlation:
+    hurst_100:
+      6E: { mean: 0.44, std: 0.08, crossings: 2 }
+      6B: { mean: 0.42, std: 0.09, crossings: 1 }
+      6J: { mean: 0.45, std: 0.07, crossings: 1 }
+      6A: { mean: 0.43, std: 0.08, crossings: 1 }
+      6C: { mean: 0.41, std: 0.09, crossings: 2 }
+
+    skew_100:
+      6E: { mean: 0.29, std: 0.10, crossings: 2 }
+      6B: { mean: 0.27, std: 0.11, crossings: 1 }
+      6J: { mean: 0.30, std: 0.09, crossings: 1 }
+      6A: { mean: 0.28, std: 0.10, crossings: 2 }
+      6C: { mean: 0.26, std: 0.11, crossings: 2 }
+
+  mutual_info:
+    log_kurt_100:
+      6E: { mean: 0.35, std: 0.06 }
+      6B: { mean: 0.33, std: 0.06 }
+      6J: { mean: 0.36, std: 0.05 }
+      6A: { mean: 0.34, std: 0.06 }
+      6C: { mean: 0.32, std: 0.06 }
+
+meta:
+  comment: >
+    Aggregated correlation and mutual information metrics by relation and asset.
+    The crossing value counts how many times the rolling correlation crossed zero over the 1000 observation window.
+    Mean and std for both correlation and mutual information come from a rolling window of the last 1000 observations.
+

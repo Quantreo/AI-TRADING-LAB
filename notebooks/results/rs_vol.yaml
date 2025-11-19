@@ -1,0 +1,50 @@
+target: future_rs_vol_60
+relations:
+  returns_10:
+    correlation: 0.119
+    mutual_info: -0.072
+  abs_returns_10:
+    correlation: -0.022
+    mutual_info: 0.115
+  rs_vol_60:
+    correlation: -0.307
+    mutual_info: 1.0
+  rs_vol_120:
+    correlation: -0.388
+    mutual_info: 0.601
+  linear_slope_60:
+    correlation: 0.212
+    mutual_info: 0.056
+  linear_slope_120:
+    correlation: 0.08
+    mutual_info: 0.254
+  tail_returns_100:
+    correlation: 0.149
+    mutual_info: -0.184
+  tail_vol_100:
+    correlation: -0.236
+    mutual_info: -0.225
+  hurst_100:
+    correlation: 0.065
+    mutual_info: -0.01
+  skew_100:
+    correlation: -0.213
+    mutual_info: 0.223
+  bimodality_coef_200:
+    correlation: 0.036
+    mutual_info: 0.019
+  price_dist_0_25_100:
+    correlation: 0.112
+    mutual_info: -0.201
+  price_dist_75_100_100:
+    correlation: -0.047
+    mutual_info: 0.055
+  future_rs_vol_60:
+    correlation: 1.0
+    mutual_info: 1.0
+meta:
+  comment: Demonstration of how Quantreo structures empirical relations between features
+    and predictive targets before interpretation by the DSR agent.
+  generated_with: Quantreo educational pipeline (simplified demo)
+  note: The real implementation includes rolling robustness tests, cross-asset validation,
+    and automatic feature ranking.
