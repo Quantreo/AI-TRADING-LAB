@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Volatility Regime Indicator
+  formula: zscore(rs_vol_60) + rank(rs_vol_120) - sma(oil_vol_50, 20)
+  conditioning: rs_vol_60 > sma(rs_vol_60, 50)
+meta:
+  concept_name: Volatility Regime Indicator
+  concept_file: volatility_regime_indicator_20251121_101323.yaml

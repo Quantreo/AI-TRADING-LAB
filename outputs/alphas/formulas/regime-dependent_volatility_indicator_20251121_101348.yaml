@@ -1,0 +1,11 @@
+alpha_formula:
+  name: Regime-Dependent Volatility Indicator
+  formula: -1 * (rank(rs_vol_50) - rank(log_vol_50)) * zscore(tail_vol_50)
+  conditioning: rs_vol_50 < sma(rs_vol_50, 20)
+meta:
+  concept_name: Regime-Dependent Volatility Indicator
+  features:
+  - rs_vol_50
+  - log_vol_50
+  - tail_vol_50
+  concept_file: regime-dependent_volatility_indicator_20251121_101348.yaml

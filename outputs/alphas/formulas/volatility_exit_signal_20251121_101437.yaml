@@ -1,0 +1,8 @@
+alpha_formula:
+  name: Volatility Exit Signal
+  formula: -1 * (rank(rs_vol_50) - rank(log_vol_60)) * (sma(tail_vol_50, 20) / sma(oil_vol_50,
+    20))
+  conditioning: benchmark_USD_factor > 0
+meta:
+  concept_name: Volatility Exit Signal
+  concept_file: volatility_exit_signal_20251121_101437.yaml

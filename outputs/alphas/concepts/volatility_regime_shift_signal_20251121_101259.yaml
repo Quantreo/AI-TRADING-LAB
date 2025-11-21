@@ -1,0 +1,21 @@
+alpha_concept:
+  name: Volatility Regime Shift Signal
+  hypothesis: The alpha captures the regime shift from low to high volatility, allowing
+    for timely adjustments in trading strategies.
+  expected_role: signal
+  target_behavior: mean_reversion, volatility
+  related_features:
+  - rs_vol_50
+  - log_vol_60
+  - tail_vol_50
+  - rs_vol_120
+  lbp:
+    who_loses: Market makers and institutional investors who rely on mean reversion
+      strategies may be structurally on the losing side, as the regime shift signal
+      can help traders anticipate and adapt to changes in volatility.
+    behavioral_bias: The bias of anchoring and overconfidence may maintain the inefficiency,
+      as traders tend to rely on recent patterns and fail to adjust to changes in
+      market conditions.
+    persistence_reason: The regime-dependent relationships between volatility features
+      and the target may persist due to differences in market structure, liquidity,
+      and regulation across regimes.

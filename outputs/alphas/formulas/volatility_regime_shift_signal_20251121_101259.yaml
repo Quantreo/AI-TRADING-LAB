@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Volatility Regime Shift Signal
+  formula: zscore(rs_vol_50) * rank(log_vol_60) - abs(tail_vol_50 - rs_vol_120)
+  conditioning: rs_vol_50 > sma(rs_vol_50, 20)
+meta:
+  concept_name: Volatility Regime Shift Signal
+  concept_file: volatility_regime_shift_signal_20251121_101259.yaml

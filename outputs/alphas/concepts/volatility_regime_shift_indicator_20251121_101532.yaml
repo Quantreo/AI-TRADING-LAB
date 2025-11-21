@@ -1,0 +1,18 @@
+alpha_concept:
+  name: Volatility Regime Shift Indicator
+  hypothesis: The alpha tries to capture the regime shift in volatility, identifying
+    when the market transitions from a low to a high volatility regime.
+  expected_role: signal
+  target_behavior: mean_reversion
+  related_features:
+  - rs_vol_50
+  - log_vol_60
+  - tail_vol_50
+  lbp:
+    who_loses: Market participants who are long volatility, such as those with high
+      exposure to tail-risk assets, tend to lose during the regime shift.
+    behavioral_bias: The bias of market participants to extrapolate recent trends
+      and ignore regime shifts contributes to the inefficiency.
+    persistence_reason: The persistence of the regime shift is due to the structure
+      of the market, where high volatility regimes tend to persist for longer periods,
+      and the latency of market participants to adjust their positions.

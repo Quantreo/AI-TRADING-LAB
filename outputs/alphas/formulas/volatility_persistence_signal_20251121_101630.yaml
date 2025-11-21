@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Volatility Persistence Signal
+  formula: -1 * (rs_vol_120 / rs_vol_60)
+  conditioning: rs_vol_60 > sma(rs_vol_60, 20)
+meta:
+  concept_name: Volatility Persistence Signal
+  concept_file: volatility_persistence_signal_20251121_101630.yaml

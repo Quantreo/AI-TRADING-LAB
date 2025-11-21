@@ -1,0 +1,7 @@
+alpha_formula:
+  name: volatility_regime_detector
+  formula: abs(zscore(rs_vol_50) - zscore(log_vol_60))
+  conditioning: rs_vol_50 > sma(rs_vol_50, 120)
+meta:
+  concept_name: volatility_regime_detector
+  concept_file: volatility_regime_detector_20251119_111630.yaml

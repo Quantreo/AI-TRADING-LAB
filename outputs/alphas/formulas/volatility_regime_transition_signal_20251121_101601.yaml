@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Volatility Regime Transition Signal
+  formula: zscore(rs_vol_50) * rank(tail_vol_50) - ema(log_vol_60, 20)
+  conditioning: rs_vol_50 > sma(rs_vol_50, 50)
+meta:
+  concept_name: Volatility Regime Transition Signal
+  concept_file: volatility_regime_transition_signal_20251121_101601.yaml

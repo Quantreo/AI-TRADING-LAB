@@ -1,0 +1,30 @@
+alpha_concept:
+  name: Volatility Regime
+  hypothesis: Markets tend to exhibit different volatility regimes, and capturing
+    these regimes can inform trading decisions.
+  expected_role: regime_indicator
+  target_behavior: mean_reversion
+  related_features:
+  - rs_vol_50
+  - log_vol_60
+  - tail_vol_50
+  - rs_vol_120
+  lbp:
+    who_loses: High-frequency traders and market makers are structurally on the losing
+      side due to their reliance on short-term price movements and order book dynamics.
+    behavioral_bias: The bias of market participants to focus on short-term price
+      movements and volatility metrics leads to a neglect of long-term regime shifts,
+      resulting in inefficient price discovery.
+    persistence_reason: The persistence of volatility regimes is due to the structural
+      characteristics of market participants, the dominance of high-frequency trading,
+      and the limitations of liquidity and order book dynamics.
+alpha_formula:
+  name: Volatility Regime
+  formula: zscore(rs_vol_50) * rank(log_vol_60)
+  conditioning: rs_vol_50 > sma(rs_vol_120, 20)
+meta:
+  combined_at: '2025-11-21T10:12:35'
+  concept_file: volatility_regime_20251121_101234.yaml
+  formula_file: volatility_regime_20251121_101234.yaml
+  focus: volatility_regime
+  notes: concept + formula concatenated

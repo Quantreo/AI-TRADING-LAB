@@ -1,0 +1,8 @@
+alpha_formula:
+  name: Market Volatility Cross-Affinity
+  formula: zscore(oil_vol_50) * rank(gold_vol_50) + ema(sp500_vol_100, 20) / sma(bitcoin_vol_100,
+    50)
+  conditioning: benchmark_USD_factor > 0
+meta:
+  concept_name: Market Volatility Cross-Affinity
+  concept_file: market_volatility_cross-affinity_20251121_102417.yaml

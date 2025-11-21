@@ -1,0 +1,9 @@
+alpha_formula:
+  name: Volatility Regime Shift Indicator
+  formula: zscore(rs_vol_50) + rank(log_vol_60) - abs(tail_vol_50)
+  conditioning: rs_vol_50 > sma(rs_vol_50, 20)
+meta:
+  concept_name: Volatility Regime Shift Indicator
+  description: Identifies regime shifts in volatility from low to high volatility
+    regimes.
+  concept_file: volatility_regime_shift_indicator_20251121_101532.yaml

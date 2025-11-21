@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Low-Volatility Trend Persistence
+  formula: -rank(rs_vol_120) * ema(log_vol_60, 20)
+  conditioning: rs_vol_50 > sma(rs_vol_120, 50)
+meta:
+  concept_name: Low-Volatility Trend Persistence
+  concept_file: low-volatility_trend_persistence_20251121_102707.yaml

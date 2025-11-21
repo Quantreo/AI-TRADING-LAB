@@ -1,0 +1,35 @@
+alpha_concept:
+  name: Volatility Persistence Signal
+  hypothesis: Assets with high future realized volatility persistence are likely to
+    experience increased trading activity and associated costs, providing a signal
+    to reduce position size or exit the market.
+  expected_role: position_sizing | signal
+  target_behavior: volatility persistence
+  related_features:
+  - rs_vol_60
+  - rs_vol_120
+  - oil_vol_50
+  - sp500_vol_100
+  - benchmark_USD_factor
+  - gold_vol_50
+  - bitcoin_vol_100
+  - sp500_vol_200
+  lbp:
+    who_loses: Active traders and market makers who frequently enter and exit positions
+      in volatile assets may experience increased trading costs and reduced profitability.
+    behavioral_bias: The desire for quick profits and failure to account for volatility
+      persistence may lead traders to overestimate their ability to manage risk and
+      underestimate the associated costs.
+    persistence_reason: The persistence of realized volatility is influenced by market
+      structure and the availability of liquidity, which can make it difficult for
+      traders to accurately predict and manage volatility.
+alpha_formula:
+  name: Volatility Persistence Signal
+  formula: -1 * (rs_vol_120 / rs_vol_60)
+  conditioning: rs_vol_60 > sma(rs_vol_60, 20)
+meta:
+  combined_at: '2025-11-21T10:16:31'
+  concept_file: volatility_persistence_signal_20251121_101630.yaml
+  formula_file: volatility_persistence_signal_20251121_101630.yaml
+  focus: exit_signal
+  notes: concept + formula concatenated

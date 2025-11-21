@@ -1,0 +1,32 @@
+alpha_concept:
+  name: Volatility Regime
+  hypothesis: The alpha aims to capture differences in volatility behavior across
+    regimes, exploiting structural inefficiencies in market participants' expectations.
+  expected_role: regime_indicator
+  target_behavior: volatility regime
+  related_features:
+  - rs_vol_50
+  - log_vol_60
+  - tail_vol_50
+  - rs_vol_120
+  - log_vol_50
+  - tail_returns_100
+  - future_rs_vol_120
+  lbp:
+    who_loses: Institutional investors and high-frequency traders who rely on mean-reversion
+      strategies, often exacerbating price movements during high volatility periods.
+    behavioral_bias: Confirmation bias, where market participants overreact to recent
+      price movements, maintaining the volatility regime.
+    persistence_reason: Liquidity and market structure, as reduced liquidity during
+      high volatility periods leads to increased price movements and amplifies existing
+      regime behaviors.
+alpha_formula:
+  name: Volatility Regime
+  formula: zscore(rs_vol_50) * rank(log_vol_60) - abs(tail_vol_50 - rs_vol_120)
+  conditioning: log_vol_50 > sma(log_vol_50, 20)
+meta:
+  combined_at: '2025-11-21T10:14:13'
+  concept_file: volatility_regime_20251121_101412.yaml
+  formula_file: volatility_regime_20251121_101412.yaml
+  focus: volatility_regime
+  notes: concept + formula concatenated

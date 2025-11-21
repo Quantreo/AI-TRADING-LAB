@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Volatility Trend Momentum
+  formula: rank(rs_vol_50) * (log_vol_60 - log_vol_50)
+  conditioning: rs_vol_50 > rs_vol_120
+meta:
+  concept_name: Volatility Trend Momentum
+  concept_file: volatility_trend_momentum_20251121_101502.yaml

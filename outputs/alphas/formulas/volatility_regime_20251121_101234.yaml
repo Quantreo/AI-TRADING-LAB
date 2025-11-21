@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Volatility Regime
+  formula: zscore(rs_vol_50) * rank(log_vol_60)
+  conditioning: rs_vol_50 > sma(rs_vol_120, 20)
+meta:
+  concept_name: Volatility Regime
+  concept_file: volatility_regime_20251121_101234.yaml

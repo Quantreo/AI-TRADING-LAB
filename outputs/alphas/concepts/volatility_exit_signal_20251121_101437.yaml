@@ -1,0 +1,28 @@
+alpha_concept:
+  name: Volatility Exit Signal
+  hypothesis: Market participants who are structurally on the losing side are those
+    who fail to accurately price volatility, resulting in misallocated capital and
+    inefficient market outcomes.
+  expected_role: exit_signal
+  target_behavior: trend following, mean reversion, volatility clustering
+  related_features:
+  - rs_vol_50
+  - log_vol_60
+  - tail_vol_50
+  - oil_vol_50
+  - sp500_vol_100
+  - benchmark_USD_factor
+  - gold_vol_50
+  - bitcoin_vol_100
+  - sp500_vol_200
+  lbp:
+    who_loses: Market participants who are structurally on the losing side are those
+      who fail to accurately price volatility, resulting in misallocated capital and
+      inefficient market outcomes.
+    behavioral_bias: The behavioral bias that maintains this inefficiency is the tendency
+      of investors to overreact to changes in volatility, leading to excessive buying
+      or selling of assets.
+    persistence_reason: The persistence of this inefficiency is due to the complexity
+      of volatility pricing and the limitations of investors' ability to accurately
+      assess risk, as well as the structural characteristics of the market, such as
+      liquidity and latency.

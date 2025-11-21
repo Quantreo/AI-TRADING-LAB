@@ -1,0 +1,28 @@
+alpha_concept:
+  name: Volatility Regime Shift Indicator
+  hypothesis: "When short\u2011term realized volatility (e.g., rs_vol_50) decouples\
+    \ from longer\u2011term volatility (e.g., rs_vol_120) and tail\u2011risk measures\
+    \ (tail_vol_50, tail_returns_100) spike, the market transitions into a high\u2011\
+    volatility regime characterized by amplified price swings and reduced liquidity."
+  expected_role: regime_indicator
+  target_behavior: volatility
+  related_features:
+  - rs_vol_50
+  - rs_vol_120
+  - log_vol_50
+  - log_vol_60
+  - tail_vol_50
+  - tail_returns_100
+  - hurst_100
+  - skew_100
+  - log_kurt_100
+  pcp:
+    who_loses: "Market makers and leveraged long\u2011short funds that rely on stable\
+      \ spreads; they are forced to widen quotes or unwind positions when volatility\
+      \ spikes."
+    behavioral_bias: "Overconfidence and anchoring to recent low\u2011volatility periods\
+      \ cause participants to underestimate tail risk, delaying protective actions\
+      \ until volatility surges."
+    persistence_reason: "Risk\u2011limit frameworks, capital\u2011charge regulations,\
+      \ and latency in updating risk models keep the lag between short\u2011term volatility\
+      \ spikes and market\u2011wide risk reallocation, allowing the regime to persist."

@@ -1,0 +1,35 @@
+alpha_concept:
+  name: Market Volatility Cross-Affinity
+  hypothesis: The future realized volatility of a given asset is influenced by the
+    volatility of other assets and market factors.
+  expected_role: signal
+  target_behavior: trend, mean_reversion
+  related_features:
+  - oil_vol_50
+  - sp500_vol_100
+  - benchmark_USD_factor
+  - gold_vol_50
+  - bitcoin_vol_100
+  - rs_vol_50
+  - log_vol_60
+  - tail_vol_50
+  - sp500_vol_200
+  lbp:
+    who_loses: Market participants who fail to account for cross-asset volatility
+      relationships, such as traders focusing on a single asset's volatility.
+    behavioral_bias: Anchoring bias, where market participants rely too heavily on
+      their own asset's volatility, neglecting the impact of other assets.
+    persistence_reason: Latency and liquidity differences between assets, as well
+      as structural differences in market microstructure, contribute to the persistence
+      of cross-asset volatility relationships.
+alpha_formula:
+  name: Market Volatility Cross-Affinity
+  formula: zscore(oil_vol_50) * rank(gold_vol_50) + ema(sp500_vol_100, 20) / sma(bitcoin_vol_100,
+    50)
+  conditioning: benchmark_USD_factor > 0
+meta:
+  combined_at: '2025-11-21T10:24:18'
+  concept_file: market_volatility_cross-affinity_20251121_102417.yaml
+  formula_file: market_volatility_cross-affinity_20251121_102417.yaml
+  focus: returns based
+  notes: concept + formula concatenated
