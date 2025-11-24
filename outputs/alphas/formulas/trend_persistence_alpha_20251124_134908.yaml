@@ -1,0 +1,8 @@
+alpha_formula:
+  name: Trend Persistence Alpha
+  formula: rank(ema(returns_100, 20)) * (1 - abs(zscore(linear_slope_100))) + sma(entropy_returns_100,
+    10)
+  conditioning: lag(returns_100, 1) > 0
+meta:
+  concept_name: Trend Persistence Alpha
+  concept_file: trend_persistence_alpha_20251124_134908.yaml

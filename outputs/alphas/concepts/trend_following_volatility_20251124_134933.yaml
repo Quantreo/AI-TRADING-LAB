@@ -1,0 +1,21 @@
+alpha_concept:
+  name: Trend Following Volatility
+  hypothesis: The alpha tries to capture the relationship between trend and volatility
+  expected_role: signal
+  target_behavior: trend
+  related_features:
+  - returns_100
+  - linear_slope_100
+  - entropy_returns_100
+  - tail_returns_200
+  - z_score_returns_50
+  - log_vol_50
+  lbp:
+    who_loses: Trend followers who are long positions in assets with decreasing trend
+      and increasing volatility are structurally on the losing side.
+    behavioral_bias: The bias of trend followers to increase their position size as
+      the trend continues, without adjusting for increasing volatility, maintains
+      this inefficiency.
+    persistence_reason: The persistence of this inefficiency is due to the latency
+      in adjusting position sizes to changes in volatility, allowing trend followers
+      to continue losing as the trend eventually reverses.

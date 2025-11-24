@@ -1,0 +1,26 @@
+alpha_concept:
+  name: "Multi\u2011Horizon Return\u2011Slope Momentum"
+  hypothesis: "When recent returns are positive and the linear slope of returns over\
+    \ medium horizons (\u2248100 periods) is also positive, the asset exhibits a persistent\
+    \ upward drift that carries into the next 10\u2011100 periods, especially in the\
+    \ presence of low entropy (ordered price paths) and modest tail risk."
+  expected_role: signal
+  target_behavior: trend
+  related_features:
+  - returns_10
+  - abs_returns_10
+  - tail_returns_50
+  - returns_100
+  - linear_slope_100
+  - entropy_returns_100
+  - tail_returns_200
+  - z_score_returns_50
+  - log_vol_50
+  lbp:
+    who_loses: "Late\u2011entering momentum traders and high\u2011frequency arbitrageurs\
+      \ who must chase an already established price move, incurring adverse fill prices."
+    behavioral_bias: Investor underreaction and anchoring to recent price levels cause
+      the market to adjust price gradually rather than instantly.
+    persistence_reason: "Information diffusion and order\u2011flow inertia in institutional\
+      \ portfolios, combined with regulatory constraints on rapid position scaling,\
+      \ sustain the lagged price adjustment."

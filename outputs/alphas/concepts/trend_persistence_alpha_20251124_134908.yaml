@@ -1,0 +1,30 @@
+alpha_concept:
+  name: Trend Persistence Alpha
+  hypothesis: The alpha captures the persistence of trends in asset returns, exploiting
+    structural inefficiencies in market participants' expectations and behaviors.
+  expected_role: signal
+  target_behavior: trend
+  related_features:
+  - returns_100
+  - linear_slope_100
+  - entropy_returns_100
+  - tail_returns_200
+  - z_score_returns_50
+  - log_vol_50
+  - oil_vol_50
+  - sp500_vol_50
+  - benchmark_USD_factor
+  - gold_vol_50
+  - bitcoin_vol_50
+  lbp:
+    who_loses: Institutional investors and high-frequency traders who rely on short-term
+      trend-following strategies are structurally on the losing side, as they fail
+      to capture the persistence of trends in asset returns.
+    behavioral_bias: Market participants' tendency to overreact to short-term price
+      movements and underreact to long-term trends creates a behavioral bias that
+      maintains this inefficiency.
+    persistence_reason: The persistence of trends is due to the limitations of human
+      perception and processing capacity, which lead to delayed reactions to changing
+      market conditions and an inability to accurately assess the strength of trends.
+      Additionally, the structure of financial markets, including latency and liquidity
+      constraints, exacerbates this persistence.

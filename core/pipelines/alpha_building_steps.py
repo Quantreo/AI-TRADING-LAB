@@ -29,10 +29,22 @@ def _basename_from_concept(concept: Dict) -> str:
     ).get("name") or "unnamed_alpha"
     return f"{slugify(name)}_{timestamp()}"
 
-def _load_dsr_subset(dsr_dir: Path, subset_size: int = 8, seed: Optional[int] = None) -> List[Dict]:
+def _load_dsr_subset(dsr_dir: Path, subset_size: int = 8, tag: Optional[str] = None, seed: Optional[int] = None) -> List[Dict]:
     files = sorted(Path(dsr_dir).glob("*.yaml"))
     if not files:
         raise FileNotFoundError(f"No DSR YAMLs found in {dsr_dir}")
+
+    # Optional filtering by tag in YAML content
+    if tag is not None:
+        filtered = []
+        for p in files:
+            data = load_yaml(p)
+            if data.get("tag") == tag:
+                filtered.append((p, data))
+        if not filtered:
+            raise ValueError(f"No DSR YAMLs matched tag '{tag}' in {dsr_dir}")
+        files = [p for p, _ in filtered]
+
     rng = random.Random(seed)
     subset = rng.sample(files, k=min(subset_size, len(files)))
     return [load_yaml(p) for p in subset]

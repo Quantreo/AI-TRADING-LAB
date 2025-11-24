@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Trend Following Signal
+  formula: rank(returns_10) + rank(linear_slope_100) - rank(abs_returns_10)
+  conditioning: returns_100 > 0
+meta:
+  concept_name: Trend Following Signal
+  concept_file: trend_following_signal_20251124_134938.yaml

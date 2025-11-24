@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Trend Following Volatility
+  formula: -1 * (linear_slope_100 * log_vol_50)
+  conditioning: linear_slope_100 < 0 and log_vol_50 > sma(log_vol_50, 20)
+meta:
+  concept_name: Trend Following Volatility
+  concept_file: trend_following_volatility_20251124_134933.yaml

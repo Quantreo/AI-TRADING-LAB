@@ -1,0 +1,27 @@
+alpha_concept:
+  name: Multi-Horizon Momentum Continuation
+  hypothesis: "Assets that have shown recent positive (or negative) returns over 10\u2011\
+    \ to 100\u2011period windows, especially when accompanied by a rising linear slope\
+    \ and low return entropy, tend to keep moving in the same direction in the near\
+    \ future."
+  expected_role: signal
+  target_behavior: trend
+  related_features:
+  - returns_10
+  - returns_100
+  - linear_slope_100
+  - entropy_returns_100
+  - abs_returns_10
+  - tail_returns_50
+  - tail_returns_200
+  - log_vol_50
+  - z_score_returns_50
+  lbp:
+    who_loses: "Late\u2011entering trend followers and early\u2011acting contrarians\
+      \ who bet on a reversal lose as the price continues its established direction."
+    behavioral_bias: "Herding and underreaction \u2013 market participants collectively\
+      \ reinforce recent price moves while individually underestimating the persistence\
+      \ of the trend."
+    persistence_reason: Execution latency, transaction costs, and limited capacity
+      for rapid arbitrage prevent immediate correction, allowing the momentum effect
+      to persist across assets and horizons.

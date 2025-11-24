@@ -18,7 +18,7 @@ random.seed()
 # ==========================================================
 #  2. Define paths and configuration
 # ==========================================================
-focus = "volatility_regime"
+focus = "volatility" # trend | volatility | or any tag from a DSR observation
 ROOT_DIR = Path(__file__).resolve().parents[2]
 INPUT_DIR = ROOT_DIR / "outputs" / "features_info" / "dsr"
 OUTPUT_DIR = ROOT_DIR / "outputs" / "tests" / "alphas" / focus / "concepts"
@@ -33,19 +33,29 @@ print(f"Output directory: {OUTPUT_DIR}")
 # ==========================================================
 yaml_files = list(INPUT_DIR.glob("*.yaml"))
 if not yaml_files:
-    raise FileNotFoundError(f"No DSR YAMLs found in {INPUT_DIR}")
+    raise FileNotFoundError(f"No YAML files found in {INPUT_DIR}")
 
-subset_size = min(8, len(yaml_files))
-subset = random.sample(yaml_files, k=subset_size)
+# 1. Load all YAMLs and filter by tag
+filtered = []
+for f in yaml_files:
+    with open(f, "r", encoding="utf-8") as fp:
+        data = yaml.safe_load(fp)
+        if data.get("tag") == focus:
+            filtered.append((f, data))
 
-print(f"Loaded {subset_size} DSR YAML file(s):")
-for f in subset:
+if not filtered:
+    raise ValueError("No YAML files matched tag 'volatility'.")
+
+# 2. Randomly select up to 8 files from the filtered list
+subset_size = min(8, len(filtered))
+subset = random.sample(filtered, k=subset_size)
+
+print(f"Loaded {subset_size} YAML file(s) with tag='volatility':")
+for f, _ in subset:
     print(f" - {f.name}")
 
-dsr_list = []
-for file in subset:
-    with open(file, "r", encoding="utf-8") as f:
-        dsr_list.append(yaml.safe_load(f))
+# 3. Extract the YAML contents only
+dsr_list = [data for _, data in subset]
 
 # ==========================================================
 #  4. Initialize model and Alpha Ideator Agent

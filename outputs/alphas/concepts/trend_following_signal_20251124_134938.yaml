@@ -1,0 +1,19 @@
+alpha_concept:
+  name: Trend Following Signal
+  hypothesis: Trends in asset prices are persistent and can be exploited using momentum-based
+    trading strategies.
+  expected_role: signal
+  target_behavior: trend
+  related_features:
+  - returns_10
+  - abs_returns_10
+  - tail_returns_50
+  - returns_100
+  - linear_slope_100
+  lbp:
+    who_loses: Sellers in trending markets, as they are often forced to sell at unfavorable
+      prices, exacerbating the trend.
+    behavioral_bias: Confirmation bias in trend followers, who may over-rely on their
+      existing views and neglect contradictory signals.
+    persistence_reason: Structural features of financial markets, such as liquidity
+      and feedback loops, which amplify and sustain trends.

@@ -1,0 +1,39 @@
+alpha_concept:
+  name: cross_asset_volatility_persistence_signal
+  hypothesis: "Recent realized volatility and tail\u2011risk measures in the equity,\
+    \ commodity and crypto markets, together with a high Hurst exponent (indicating\
+    \ long\u2011range dependence), forecast elevated future realized volatility over\
+    \ 50\u2011120\u2011period horizons. The effect is stronger in low\u2011volatility\
+    \ regimes where volatility persistence is more pronounced."
+  expected_role: signal
+  target_behavior: volatility_persistence
+  related_features:
+  - rs_vol_50
+  - rs_vol_60
+  - rs_vol_120
+  - log_vol_50
+  - log_vol_60
+  - tail_vol_50
+  - tail_returns_100
+  - tail_returns_200
+  - hurst_100
+  - skew_100
+  - log_kurt_100
+  - oil_vol_50
+  - oil_vol_200
+  - sp500_vol_50
+  - sp500_vol_100
+  - sp500_vol_200
+  - gold_vol_50
+  - bitcoin_vol_50
+  - bitcoin_vol_100
+  - benchmark_USD_factor
+  lbp:
+    who_loses: "market participants who are short volatility\u2014option writers,\
+      \ volatility\u2011selling strategies, and leveraged long\u2011volatility funds\u2014\
+      experience larger losses when volatility persists or spikes."
+    behavioral_bias: "anchoring to recent low\u2011volatility periods and underestimation\
+      \ of tail\u2011risk events cause systematic underpricing of future volatility."
+    persistence_reason: "limited hedging capacity for extreme tail events, regulatory\
+      \ capital constraints on volatility exposure, and cross\u2011asset information\
+      \ diffusion delays create a structural lag that sustains the predictive relationship."

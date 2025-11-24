@@ -32,15 +32,11 @@ load_dotenv()
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--focus", "-f",
-    default="returns based",
+    default="trend",
     choices=[
-        "entry_signal",
-        "exit_signal",
-        "regime_indicator",
-        "risk_filter",
-        "position_sizing",
-        "volatility_regime",
-        "trend_analysis"
+        "trend",
+        "volatility",
+        "volume"
     ]
 )
 

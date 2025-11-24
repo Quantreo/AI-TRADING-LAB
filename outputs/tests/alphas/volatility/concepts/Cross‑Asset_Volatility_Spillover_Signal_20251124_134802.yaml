@@ -1,0 +1,34 @@
+alpha_concept:
+  name: "Cross\u2011Asset Volatility Spillover Signal"
+  hypothesis: "In periods of elevated market stress, realized volatility in major\
+    \ risk assets (equities, commodities, crypto) transmits to other instruments,\
+    \ creating a predictable upward drift in future realized volatility of the target\
+    \ horizon. This spillover is driven by coordinated risk\u2011off behavior and\
+    \ hedging flows that amplify volatility across markets."
+  expected_role: signal
+  target_behavior: volatility
+  related_features:
+  - oil_vol_50
+  - gold_vol_50
+  - sp500_vol_100
+  - bitcoin_vol_100
+  - sp500_vol_200
+  - rs_vol_50
+  - log_vol_50
+  - tail_vol_50
+  - rs_vol_60
+  - rs_vol_120
+  - tail_returns_100
+  - tail_returns_200
+  - hurst_100
+  - skew_100
+  - log_kurt_100
+  lbp:
+    who_loses: "Short\u2011volatility option writers and high\u2011frequency market\
+      \ makers who are on the adverse side of sudden volatility spikes."
+    behavioral_bias: "Overconfidence and anchoring cause participants to underestimate\
+      \ the speed and magnitude of cross\u2011asset volatility contagion, while herding\
+      \ reinforces collective risk\u2011off moves."
+    persistence_reason: "Capital\u2011intensive hedging mandates, regulatory liquidity\
+      \ buffers, and latency in information diffusion across asset classes sustain\
+      \ the spillover effect, making it observable over 50\u2011120 period horizons."

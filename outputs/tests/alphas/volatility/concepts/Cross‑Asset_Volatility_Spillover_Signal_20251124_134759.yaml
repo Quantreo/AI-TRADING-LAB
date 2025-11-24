@@ -1,0 +1,28 @@
+alpha_concept:
+  name: "Cross\u2011Asset Volatility Spillover Signal"
+  hypothesis: "In periods when short\u2011term volatility in major commodities (oil,\
+    \ gold, bitcoin) and the USD factor rise, the realized volatility of broader equity\
+    \ markets (e.g., S&P\u202F500) over the next 60\u2011120 periods also rises, reflecting\
+    \ a contagion of risk perception across asset classes."
+  expected_role: signal
+  target_behavior: volatility
+  related_features:
+  - oil_vol_50
+  - gold_vol_50
+  - bitcoin_vol_50
+  - sp500_vol_50
+  - sp500_vol_60
+  - sp500_vol_100
+  - sp500_vol_200
+  - benchmark_USD_factor
+  lbp:
+    who_loses: "Leveraged and risk\u2011seeking investors who are on the long side\
+      \ of equities when volatility spikes, as higher volatility erodes risk\u2011\
+      adjusted returns and raises margin calls."
+    behavioral_bias: "Overreaction to commodity\u2011driven news and anchoring to\
+      \ recent volatility bursts, causing herd\u2011like widening of risk premia across\
+      \ markets."
+    persistence_reason: Structural linkages between commodity pricing, funding costs,
+      and equity market liquidity create a lagged transmission channel; regulatory
+      capital buffers and margin timing further delay the adjustment, allowing the
+      spillover effect to persist.
