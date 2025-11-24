@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Regime-Dependent Volatility Trend
+  formula: ema(rs_vol_50, 20) - sma(log_vol_60, 30)
+  conditioning: abs(tail_vol_50) > 1.5 * std(tail_vol_50, 20)
+meta:
+  concept_name: Regime-Dependent Volatility Trend
+  concept_file: regime-dependent_volatility_trend_20251124_135203.yaml

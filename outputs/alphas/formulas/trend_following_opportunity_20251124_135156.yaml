@@ -1,0 +1,7 @@
+alpha_formula:
+  name: Trend Following Opportunity
+  formula: ema(returns_100, 20) - ema(returns_10, 5)
+  conditioning: returns_100 > 0
+meta:
+  concept_name: Trend Following Opportunity
+  concept_file: trend_following_opportunity_20251124_135156.yaml
